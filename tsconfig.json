@@ -1,8 +1,8 @@
 {
-	"compilerOptions": {
-	  "lib": ["esnext"],
-	  "module": "esnext",
-	  "target": "esnext",
-	  "types": ["bun-types"]
-	}
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "module": "esnext",
+    "target": "esnext",
+    "types": ["bun-types"]
   }
+}

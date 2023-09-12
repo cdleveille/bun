@@ -12,7 +12,7 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-# Set production port
+# Set port
 ENV PORT="8080"
 
 # Throw-away build stage to reduce size of final image
@@ -36,6 +36,7 @@ RUN bun run build
 RUN rm -rf node_modules && \
     bun install --ci
 
+
 # Final stage for app image
 FROM base
 
@@ -43,5 +44,5 @@ FROM base
 COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
+EXPOSE 8080
 CMD [ "bun", "run", "start" ]

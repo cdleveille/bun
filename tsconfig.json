@@ -16,9 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"],
-      "@helpers": ["src/server/helpers"],
-      "@services": ["src/server/services"],
-      "@types": ["src/server/types"]
+      "@helpers": ["src/helpers"],
+      "@services": ["src/services"],
+      "@types": ["src/types"]
     }
   }
 }

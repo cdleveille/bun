@@ -1,14 +1,21 @@
 {
-  "scripts": {
-    "start": "bun run src/index.ts"
-  },
+  "main": "dist/index.js",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
-    "bun-types": "^0.1.4",
-    "eslint": "^8.19.0",
-    "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
-  }
+    "@flydotio/dockerfile": "^0.4.9",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "bun-types": "^1.0.1",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx . && prettier --check .",
+    "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx . && prettier --write .",
+    "dev": "bun --watch src/server/index.ts",
+    "build": "bun run scripts/build.ts",
+    "start": "bun run ."
+  },
+  "type": "module"
 }

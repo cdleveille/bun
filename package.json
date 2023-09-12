@@ -14,8 +14,8 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && prettier --check .",
     "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx . && prettier --write .",
     "dev": "bun --watch src/server/index.ts",
-    "build": "bun run scripts/build.ts",
-    "start": "bun run build && bun run ."
+    "build": "bun build --minify --outdir dist src/server/index.ts",
+    "start": "bun run ."
   },
   "type": "module"
 }

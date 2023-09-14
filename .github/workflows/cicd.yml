@@ -17,4 +17,3 @@ jobs:
           version: 1.0.1
 
       - run: bun install --frozen-lockfile --production
-      - run: bun run build

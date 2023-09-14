@@ -22,20 +22,13 @@ FROM base as build
 RUN apt-get update -qq && \
     apt-get install -y build-essential pkg-config python-is-python3
 
-# Install node modules
-COPY --link bun.lockb package.json ./
-RUN bun install
-
 # Copy application code
+COPY --link bun.lockb package.json ./
 COPY --link . .
 
-# Build application
-RUN bun run build
-
-# Remove development dependencies
+# Install production dependencies only
 RUN rm -rf node_modules && \
-    bun install --ci
-
+    bun install --frozen-lockfile --production
 
 # Final stage for app image
 FROM base

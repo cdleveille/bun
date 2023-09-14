@@ -21,7 +21,7 @@ jobs:
         with:
           version: 1.0.1
 
-      - run: bun install
+      - run: bun install --frozen-lockfile --production
       - run: bun run build
 
       - uses: superfly/flyctl-actions/setup-flyctl@master
